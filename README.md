@@ -2,29 +2,13 @@
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone https://github.com/especializati/setup-docker-laravel.git
+git clone https://github.com/isaquemenezes/teste-card-docker-laravel
 ```
-
-Clone os Arquivos do Laravel
-```sh
-git clone https://github.com/laravel/laravel.git app-laravel
-```
-
-
-Copie os arquivos docker-compose.yml, Dockerfile e o diretório docker/ para o seu projeto
-```sh
-cp -rf setup-docker-laravel/* app-laravel/
-```
-```sh
-cd app-laravel/
-```
-
 
 Crie o Arquivo .env
 ```sh
 cp .env.example .env
 ```
-
 
 Atualize as variáveis de ambiente do arquivo .env
 ```dosini
@@ -53,12 +37,10 @@ Suba os containers do projeto
 docker-compose up -d
 ```
 
-
 Acessar o container
 ```sh
 docker-compose exec app bash
 ```
-
 
 Instalar as dependências do projeto
 ```sh
@@ -80,7 +62,6 @@ php artisan migrate
 Acessar o projeto
 [http://localhost:8989](http://localhost:8989)
 
-# Setup Docker Para Projetos Laravel (8, 9 ou 10)
+# Referenciais:
+### Setup Docker Para Projetos Laravel (8, 9 ou 10)
 [Especializati github!](https://github.com/especializati)
-
-
