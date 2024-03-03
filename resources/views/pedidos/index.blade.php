@@ -1,46 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-
-      <title>Todos os Pedidos</title>
-
-      <!-- Bootstrap CSS do CDN -->    
-      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">    
-
-    </head>
-
-    <body class="antialiased">
-
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
-      <div class="container-fluid">
-       
-        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
-
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{ route('home')}}">Home</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('produtos.index') }}">Lista de Produtos</a>
-            </li>
-
-            <li class="nav-item">
-              <a class="nav-link" href="{{ route('pedidos.index') }}">Lista de Pedidos</a>
-            </li>
-
-          </ul>
-
-          <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-
-        </div>
-      </div>
-    </nav>
+@extends("layouts.head")
+@extends("layouts.navbar")
 
     <main class="container">
      
@@ -128,20 +87,19 @@
     </div>
 
 
-    <!-- Bootstrap JS do CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
+    
     <!-- script js   -->
     <script>
-        var deleteModal = document.getElementById('confirmDeleteModal');
-        deleteModal.addEventListener('show.bs.modal', function (event) {
-            var button = event.relatedTarget;
-            var productId = button.getAttribute('data-order-id');
-            var form = deleteModal.querySelector('#deleteForm');
-            var actionUrl = '{{ route("pedidos.destroy", ":id") }}'.replace(':id', productId);
-            form.setAttribute('action', actionUrl);
-        });
-    </script>
-    
-    </body>
-</html>
+      var deleteModal = document.getElementById('confirmDeleteModal');
+      deleteModal.addEventListener('show.bs.modal', function (event) {
+        var button = event.relatedTarget;
+        var productId = button.getAttribute('data-order-id');
+        var form = deleteModal.querySelector('#deleteForm');
+        var actionUrl = '{{ route("pedidos.destroy", ":id") }}'.replace(':id', productId);
+        form.setAttribute('action', actionUrl);
+      });
+      </script>
+
+
+
+   @extends("layouts.footer")

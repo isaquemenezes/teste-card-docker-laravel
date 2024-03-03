@@ -12,7 +12,7 @@ cp .env.example .env
 
 Atualize as variáveis de ambiente do arquivo .env
 ```dosini
-APP_NAME="Especializa Ti"
+
 APP_URL=http://localhost:8989
 
 DB_CONNECTION=mysql
@@ -56,6 +56,11 @@ php artisan key:generate
 Executar as migration
 ```sh
 php artisan migrate
+```
+
+Execute o seguinte comando para criar um link simbólico do diretório de armazenamento público:
+```sh
+php artisan storage:link
 ```
 
 
